@@ -83,6 +83,7 @@ flutter:
     - assets/images/infantil2.jpeg
     - assets/images/infantil3.jpg
     - assets/images/background.jpg
+    - assets/movies.json
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
