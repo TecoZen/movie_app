@@ -6,6 +6,8 @@ class Movie {
   final String description;
   final String imagePath;
   final String category;
+  final double rating;
+  final int duration;
 
   Movie({
     required this.id,
@@ -13,6 +15,8 @@ class Movie {
     required this.description,
     required this.imagePath,
     required this.category,
+    required this.rating,
+    required this.duration,
   });
 
   factory Movie.fromJson(Map<String, dynamic> json) {
@@ -22,6 +26,8 @@ class Movie {
       description: json['description'],
       imagePath: json['imagePath'],
       category: json['category'],
+      rating: (json['rating'] as num).toDouble(),
+      duration: json['duration'],
     );
   }
 }

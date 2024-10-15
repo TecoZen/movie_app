@@ -10,6 +10,9 @@ class MovieDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Calculamos el ancho y alto de la pantalla
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       // El cuerpo del Scaffold envuelto en un Container con la imagen de fondo
       body: Container(
@@ -38,12 +41,12 @@ class MovieDetailScreen extends StatelessWidget {
                     ),
                     // Título de la película centrado en la parte superior
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 16.0),
+                      padding: const EdgeInsets.symmetric(vertical: 8.0),
                       child: Center(
                         child: Text(
                           movie.title,
                           style: TextStyle(
-                            fontSize: 28,
+                            fontSize: 24, // Reducimos el tamaño de la fuente
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
                           ),
@@ -51,46 +54,83 @@ class MovieDetailScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    // Imagen principal y miniatura superpuesta
+                    // Imagen principal y contenido superpuesto
                     Stack(
-                      clipBehavior: Clip.none, // Permite que los widgets se salgan de los límites
+                      clipBehavior: Clip.none,
                       children: [
-                        // Imagen principal
+                        // Imagen principal (reducimos su altura)
                         Image.asset(
                           movie.imagePath,
                           fit: BoxFit.cover,
                           width: double.infinity,
-                          height: 300,
+                          height: 200, // Reducimos la altura de 300 a 200
                         ),
-                        // Miniatura de la imagen de la película
+                        // Imagen superpuesta y datos adicionales
                         Positioned(
-                          top: 220, // Ajusta esta posición vertical según tus necesidades
-                          left: 16, // Mueve la miniatura hacia la izquierda
-                          child: Container(
-                            width: 150,
-                            height: 225,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8.0),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black45,
-                                  offset: Offset(0, 2),
-                                  blurRadius: 6.0,
+                          top: 150, // Ajustamos la posición vertical
+                          left: 16,
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              // Imagen superpuesta (reducimos su tamaño)
+                              Container(
+                                width: 100, // Reducimos el ancho de 150 a 100
+                                height: 150, // Reducimos la altura de 225 a 150
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black45,
+                                      offset: Offset(0, 2),
+                                      blurRadius: 6.0,
+                                    ),
+                                  ],
                                 ),
-                              ],
-                            ),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(8.0),
-                              child: Image.asset(
-                                movie.imagePath,
-                                fit: BoxFit.cover,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  child: Image.asset(
+                                    movie.imagePath,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
                               ),
-                            ),
+                              SizedBox(width: 16),
+                              // Información de rating y duración
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(height: 65), // Bajamos un poco la posición
+                                  // Rating
+                                  Row(
+                                    children: [
+                                      Icon(Icons.star, color: Colors.yellowAccent),
+                                      SizedBox(width: 5),
+                                      Text(
+                                        '${movie.rating} / 5',
+                                        style: TextStyle(fontSize: 16, color: Colors.white),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(height: 8),
+                                  // Duración
+                                  Row(
+                                    children: [
+                                      Icon(Icons.access_time, color: Colors.white),
+                                      SizedBox(width: 5),
+                                      Text(
+                                        '${movie.duration} min',
+                                        style: TextStyle(fontSize: 16, color: Colors.white),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ],
                           ),
                         ),
                       ],
                     ),
-                    SizedBox(height: 160), // Espacio para acomodar la miniatura superpuesta
+                    SizedBox(height: 130), // Ajustamos el espacio después del Stack
                     // Descripción de la película
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 16.0),
