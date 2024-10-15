@@ -11,75 +11,106 @@ class MovieDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          // Imagen de fondo que ocupa toda la pantalla
-          Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/detail_background.jpg'),
-                fit: BoxFit.cover,
-              ),
-            ),
+      // El cuerpo del Scaffold envuelto en un Container con la imagen de fondo
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/detail_background.jpg'),
+            fit: BoxFit.cover,
           ),
-          // Contenido de la pantalla
-          SafeArea(
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // Imagen de la película y botón de regreso
-                  Stack(
-                    children: [
-                      Image.asset(
-                        movie.imagePath,
-                        fit: BoxFit.cover,
-                        width: double.infinity,
-                        height: 300,
+        ),
+        child: Stack(
+          children: [
+            // Contenido de la pantalla
+            SafeArea(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    // Botón de regreso en la esquina superior izquierda
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: IconButton(
+                        icon: Icon(Icons.arrow_back, color: Colors.white),
+                        onPressed: () => Navigator.pop(context),
                       ),
-                      // Botón de regreso
-                      Positioned(
-                        top: 16,
-                        left: 16,
-                        child: IconButton(
-                          icon: Icon(Icons.arrow_back, color: Colors.white),
-                          onPressed: () => Navigator.pop(context),
+                    ),
+                    // Título de la película centrado en la parte superior
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 16.0),
+                      child: Center(
+                        child: Text(
+                          movie.title,
+                          style: TextStyle(
+                            fontSize: 28,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
                       ),
-                    ],
-                  ),
-                  SizedBox(height: 16),
-                  // Título de la película
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                    child: Text(
-                      movie.title,
-                      style: TextStyle(
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                    ),
+                    // Imagen principal y miniatura superpuesta
+                    Stack(
+                      clipBehavior: Clip.none, // Permite que los widgets se salgan de los límites
+                      children: [
+                        // Imagen principal
+                        Image.asset(
+                          movie.imagePath,
+                          fit: BoxFit.cover,
+                          width: double.infinity,
+                          height: 300,
+                        ),
+                        // Miniatura de la imagen de la película
+                        Positioned(
+                          top: 220, // Ajusta esta posición vertical según tus necesidades
+                          left: 16, // Mueve la miniatura hacia la izquierda
+                          child: Container(
+                            width: 150,
+                            height: 225,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8.0),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black45,
+                                  offset: Offset(0, 2),
+                                  blurRadius: 6.0,
+                                ),
+                              ],
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8.0),
+                              child: Image.asset(
+                                movie.imagePath,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 160), // Espacio para acomodar la miniatura superpuesta
+                    // Descripción de la película
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      child: Text(
+                        movie.description,
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.white70,
+                        ),
+                        textAlign: TextAlign.justify,
                       ),
                     ),
-                  ),
-                  SizedBox(height: 10),
-                  // Descripción de la película
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                    child: Text(
-                      movie.description,
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.white70,
-                      ),
-                      textAlign: TextAlign.justify,
-                    ),
-                  ),
-                  SizedBox(height: 20), // Espacio adicional si es necesario
-                ],
+                    SizedBox(height: 20),
+                    // Puedes agregar más contenido aquí
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

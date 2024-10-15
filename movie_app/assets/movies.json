@@ -5,154 +5,198 @@
         "title": "Película 1",
         "description": "Una emocionante aventura que te mantendrá al borde de tu asiento.",
         "imagePath": "assets/images/pelicula1.jpg",
-        "category": "Top 10"
+        "category": "Top 10",
+        "rating": 4.5,
+        "duration": 110
       },
       {
         "id": 2,
         "title": "Película 2",
         "description": "Una historia inspiradora sobre la superación personal y la amistad.",
         "imagePath": "assets/images/pelicula2.jpg",
-        "category": "Top 10"
+        "category": "Top 10",
+        "rating": 3.7,
+        "duration": 95
       },
       {
         "id": 3,
         "title": "Película 3",
         "description": "Un drama cautivador que explora las complejidades de las relaciones humanas.",
         "imagePath": "assets/images/pelicula3.jpg",
-        "category": "Top 10"
+        "category": "Top 10",
+        "rating": 4.2,
+        "duration": 105
       },
       {
         "id": 4,
         "title": "Película 4",
         "description": "Una comedia hilarante que te hará reír de principio a fin.",
         "imagePath": "assets/images/pelicula4.jpg",
-        "category": "Top 10"
+        "category": "Top 10",
+        "rating": 4.0,
+        "duration": 100
       },
       {
         "id": 5,
         "title": "Película 5",
         "description": "Un thriller lleno de giros inesperados y suspenso.",
         "imagePath": "assets/images/pelicula5.jpg",
-        "category": "Top 10"
+        "category": "Top 10",
+        "rating": 4.3,
+        "duration": 115
       },
       {
         "id": 6,
         "title": "Película 6",
         "description": "Una epopeya histórica que narra eventos significativos del pasado.",
         "imagePath": "assets/images/pelocula6.jpeg",
-        "category": "Top 10"
+        "category": "Top 10",
+        "rating": 3.5,
+        "duration": 120
       },
       {
         "id": 7,
         "title": "Película 7",
         "description": "Una fascinante exploración de mundos fantásticos y criaturas mágicas.",
         "imagePath": "assets/images/pelicula7.jpg",
-        "category": "Top 10"
+        "category": "Top 10",
+        "rating": 4.8,
+        "duration": 110
       },
       {
         "id": 8,
         "title": "Película 8",
         "description": "Un documental revelador que ofrece una nueva perspectiva sobre temas actuales.",
         "imagePath": "assets/images/pelicula8.jpeg",
-        "category": "Top 10"
+        "category": "Top 10",
+        "rating": 3.9,
+        "duration": 90
       },
       {
         "id": 9,
         "title": "Película 9",
         "description": "Una intensa historia de amor que desafía todas las barreras.",
         "imagePath": "assets/images/pelicula9.jpg",
-        "category": "Top 10"
+        "category": "Top 10",
+        "rating": 4.6,
+        "duration": 100
       },
       {
         "id": 10,
         "title": "Película 10",
         "description": "Una animación encantadora que deleitará a toda la familia.",
         "imagePath": "assets/images/pelicula10.jpg",
-        "category": "Top 10"
+        "category": "Top 10",
+        "rating": 4.1,
+        "duration": 85
       },
       {
         "id": 11,
         "title": "Terror 1",
         "description": "Una casa embrujada revela oscuros secretos del pasado.",
         "imagePath": "assets/images/terror1.jpg",
-        "category": "Terror"
+        "category": "Terror",
+        "rating": 3.0,
+        "duration": 100
       },
       {
         "id": 12,
         "title": "Terror 2",
         "description": "Un grupo de amigos enfrenta sus peores pesadillas.",
         "imagePath": "assets/images/terror2.jpg",
-        "category": "Terror"
+        "category": "Terror",
+        "rating": 3.5,
+        "duration": 90
       },
       {
         "id": 13,
         "title": "Terror 3",
         "description": "Una entidad sobrenatural acecha en las sombras.",
         "imagePath": "assets/images/terror3.jpeg",
-        "category": "Terror"
+        "category": "Terror",
+        "rating": 2.8,
+        "duration": 95
       },
       {
         "id": 14,
         "title": "Romance 1",
         "description": "Dos almas gemelas se encuentran en circunstancias inesperadas.",
         "imagePath": "assets/images/romance1.jpg",
-        "category": "Romance"
+        "category": "Romance",
+        "rating": 4.7,
+        "duration": 105
       },
       {
         "id": 15,
         "title": "Romance 2",
         "description": "Una historia de amor que trasciende el tiempo y el espacio.",
         "imagePath": "assets/images/romance2.jpeg",
-        "category": "Romance"
+        "category": "Romance",
+        "rating": 4.4,
+        "duration": 115
       },
       {
         "id": 16,
         "title": "Romance 3",
         "description": "Una pareja enfrenta desafíos para mantener su relación viva.",
         "imagePath": "assets/images/romance3.webp",
-        "category": "Romance"
+        "category": "Romance",
+        "rating": 3.8,
+        "duration": 100
       },
       {
         "id": 17,
         "title": "Acción 1",
         "description": "Un agente secreto en una misión para salvar al mundo.",
         "imagePath": "assets/images/accion1.jpg",
-        "category": "Acción"
+        "category": "Acción",
+        "rating": 4.5,
+        "duration": 120
       },
       {
         "id": 18,
         "title": "Acción 2",
         "description": "Carreras de alta velocidad y adrenalina pura.",
         "imagePath": "assets/images/accion2.jpg",
-        "category": "Acción"
+        "category": "Acción",
+        "rating": 3.6,
+        "duration": 110
       },
       {
         "id": 19,
         "title": "Acción 3",
         "description": "Batallas épicas en un universo futurista.",
         "imagePath": "assets/images/accion3.jpg",
-        "category": "Acción"
+        "category": "Acción",
+        "rating": 4.0,
+        "duration": 115
       },
       {
         "id": 20,
         "title": "Infantil 1",
         "description": "Una aventura mágica para los más pequeños.",
         "imagePath": "assets/images/infantil1.jpg",
-        "category": "Infantiles"
+        "category": "Infantiles",
+        "rating": 4.3,
+        "duration": 85
       },
       {
         "id": 21,
         "title": "Infantil 2",
         "description": "Personajes encantadores que enseñan valiosas lecciones.",
         "imagePath": "assets/images/infantil2.jpeg",
-        "category": "Infantiles"
+        "category": "Infantiles",
+        "rating": 4.0,
+        "duration": 80
       },
       {
         "id": 22,
         "title": "Infantil 3",
         "description": "Un mundo de fantasía lleno de diversión y alegría.",
         "imagePath": "assets/images/infantil3.jpg",
-        "category": "Infantiles"
+        "category": "Infantiles",
+        "rating": 4.5,
+        "duration": 90
       }
     ]
   }
